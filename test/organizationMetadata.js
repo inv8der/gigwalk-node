@@ -16,7 +16,7 @@ describe('Organization Metadata', () => {
     const organizationID: number = 7;
     const metadataFieldID: number = 1;
 
-    it('should be able to create metadata for an organization', (done) => {
+    it.skip('should be able to create metadata for an organization', (done) => {
         organizationMetadata.create({
             organization_id: organizationID,
             name: randString
@@ -28,7 +28,7 @@ describe('Organization Metadata', () => {
         })
         .catch(done);
     }).timeout(30000);
-    it('should be able to get metadata for an organization', (done) => {
+    it.skip('should be able to get metadata for an organization', (done) => {
         organizationMetadata.get({
             organization_id: organizationID,
             query: {
@@ -59,7 +59,7 @@ describe('Organization Metadata', () => {
     //     })
     //     .catch(done);
     // }).timeout(30000);
-    it('should be able to get a metadata field for an organization', (done) => {
+    it.skip('should be able to get a metadata field for an organization', (done) => {
         organizationMetadata.getField({
             organization_id: organizationID,
             organization_metadata_field_id: metadataFieldID,
@@ -74,7 +74,7 @@ describe('Organization Metadata', () => {
         })
         .catch(done);
     }).timeout(30000);
-    it('should be able to update a metadata field for an organization', (done) => {
+    it.skip('should be able to update a metadata field for an organization', (done) => {
         organizationMetadata.updateField({
             organization_id: organizationID,
             organization_metadata_field_id: metadataFieldID,
