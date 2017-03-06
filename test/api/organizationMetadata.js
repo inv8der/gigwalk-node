@@ -1,4 +1,4 @@
-import schema from '../../src/api/organizationMetadata/organizationMetadata-schema.json';
+import schema from './schemas/organizationMetadata-schema.json';
 import createMoniker from '../utils/createMoniker';
 
 describe('Organization Metadata', () => {

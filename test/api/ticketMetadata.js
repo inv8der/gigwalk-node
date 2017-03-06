@@ -1,4 +1,4 @@
-import schema from '../../src/api/ticketMetadata/ticketMetadata-schema.json';
+import schema from './schemas/ticketMetadata-schema.json';
 import createMoniker from '../utils/createMoniker';
 
 describe('Ticket Metadata', () => {

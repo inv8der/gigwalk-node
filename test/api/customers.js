@@ -1,6 +1,6 @@
-import schema from '../../src/api/customers/customers-schema.json';
-import schemaSearch from '../../src/api/search/search-schema.json';
-import schemaDelete from '../../src/api/delete-schema.json';
+import schema from './schemas/customers-schema.json';
+import schemaSearch from './schemas/search-schema.json';
+import schemaDelete from './schemas/delete-schema.json';
 
 describe('Customers', () => {
     const organizationID = 4;

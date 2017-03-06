@@ -1,4 +1,4 @@
-import schema from '../../src/api/versions/versions-schema.json';
+import schema from './schemas/versions-schema.json';
 
 describe('versions', () => {
     it('should be able to return current versions for the api', (done) => {

@@ -1,6 +1,6 @@
-import schema from '../../src/api/groups/groups-schema.json';
-import schemaEmpty from '../../src/api/empty-schema.json';
-import schemaDelete from '../../src/api/delete-schema.json';
+import schema from './schemas/groups-schema.json';
+import schemaEmpty from './schemas/empty-schema.json';
+import schemaDelete from './schemas/delete-schema.json';
 import createMoniker from '../utils/createMoniker';
 
 describe('Groups', () => {

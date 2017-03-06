@@ -1,4 +1,4 @@
-import schema from '../../src/api/certifications/certifications-schema.json';
+import schema from './schemas/certifications-schema.json';
 import createMoniker from '../utils/createMoniker';
 
 describe('Certifications', () => {

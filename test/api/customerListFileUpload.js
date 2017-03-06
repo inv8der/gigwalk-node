@@ -1,4 +1,4 @@
-import schema from '../../src/api/customerListFileUpload/customerListFileUpload-schema.json';
+import schema from './schemas/customerListFileUpload-schema.json';
 import createMoniker from '../utils/createMoniker';
 
 describe('Customer List File Upload', () => {

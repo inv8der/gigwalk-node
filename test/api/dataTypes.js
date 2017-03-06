@@ -1,4 +1,4 @@
-import schema from '../../src/api/dataTypes/dataTypes-schema.json';
+import schema from './schemas/dataTypes-schema.json';
 import createMoniker from '../utils/createMoniker';
 
 describe('Data Types', () => {
