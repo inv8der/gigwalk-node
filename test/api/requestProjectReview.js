@@ -1,4 +1,4 @@
-import schema from '../../src/api/requestProjectReview/requestProjectReview-schema.json';
+import schema from './schemas/requestProjectReview-schema.json';
 
 describe('Request Project Review', () => {
     const organizationID = 4;

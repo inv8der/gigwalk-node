@@ -1,5 +1,5 @@
-import schema from '../../src/api/tickets/tickets-schema.json';
-import schemaAlt from '../../src/api/tickets/tickets_alt-schema.json';
+import schema from './schemas/tickets-schema.json';
+import schemaAlt from './schemas/tickets_alt-schema.json';
 
 describe('Tickets', () => {
     const organizationID = 4;

@@ -1,4 +1,4 @@
-import schema from '../../src/api/fileJob/fileJob-schema.json';
+import schema from './schemas/fileJob-schema.json';
 
 describe('File Job', () => {
     const fileJobID = 100;

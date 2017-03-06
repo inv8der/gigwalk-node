@@ -1,6 +1,6 @@
-import schema from '../../src/api/subscriptions/subscriptions-schema.json';
-import schemaSearch from '../../src/api/subscriptions/subscriptions_search-schema.json';
-import schemaDelete from '../../src/api/delete-schema.json';
+import schema from './schemas/subscriptions-schema.json';
+import schemaSearch from './schemas/subscriptions_search-schema.json';
+import schemaDelete from './schemas/delete-schema.json';
 import createMoniker from '../utils/createMoniker';
 
 describe('Subscriptions', () => {

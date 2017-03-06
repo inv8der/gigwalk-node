@@ -1,4 +1,4 @@
-import schema from '../../src/api/locationLists/locationLists-schema.json';
+import schema from './schemas/locationLists-schema.json';
 import createMoniker from '../utils/createMoniker';
 
 describe('Location Lists', () => {

@@ -1,4 +1,4 @@
-import schema from '../../src/api/search/search-schema.json';
+import schema from './schemas/search-schema.json';
 
 describe('Search', () => {
     const organizationID = 4;

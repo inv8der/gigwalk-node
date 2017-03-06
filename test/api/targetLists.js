@@ -1,5 +1,5 @@
-import schema from '../../src/api/targetLists/targetLists-schema.json';
-import schemaDelete from '../../src/api/delete-schema.json';
+import schema from './schemas/targetLists-schema.json';
+import schemaDelete from './schemas/delete-schema.json';
 import createMoniker from '../utils/createMoniker';
 
 describe('Target Lists', () => {

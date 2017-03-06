@@ -1,4 +1,4 @@
-import schema from '../../src/api/targets/targets-schema.json';
+import schema from './schemas/targets-schema.json';
 import createMoniker from '../utils/createMoniker';
 
 describe('Targets', () => {

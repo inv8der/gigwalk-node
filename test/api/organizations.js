@@ -1,5 +1,5 @@
-import schema from '../../src/api/organizations/organizations-schema.json';
-import schemaEmpty from '../../src/api/empty-schema.json';
+import schema from './schemas/organizations-schema.json';
+import schemaEmpty from './schemas/empty-schema.json';
 import createMoniker from '../utils/createMoniker';
 
 describe('Organizations', () => {
