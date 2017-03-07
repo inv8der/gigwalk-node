@@ -2,6 +2,8 @@
 import { Axios } from 'axios';
 import type { $AxiosXHRConfig, $AxiosXHRConfigBase, $AxiosXHR } from 'axios';
 import RequestQueue from './requestQueue';
+import transformRequest from './utils/transformRequest';
+import transformResponse from './utils/transformResponse';
 
 export default class GigwalkAxios extends Axios {
 
@@ -55,8 +57,6 @@ export default class GigwalkAxios extends Axios {
         if (defaultConfig.params) config.params = defaultConfig.params;
         if (defaultConfig.paramsSerializer) config.paramsSerializer = defaultConfig.paramsSerializer;
         if (defaultConfig.responseType) config.responseType = defaultConfig.responseType;
-        if (defaultConfig.transformResponse) config.transformResponse = defaultConfig.transformResponse;
-        if (defaultConfig.transformRequest) config.transformRequest = defaultConfig.transformRequest;
         if (defaultConfig.timeout) config.timeout = defaultConfig.timeout;
         if (defaultConfig.validateStatus) config.validateStatus = defaultConfig.validateStatus;
         if (defaultConfig.withCredentials) config.withCredentials = defaultConfig.withCredentials;
@@ -64,6 +64,14 @@ export default class GigwalkAxios extends Axios {
         if (defaultConfig.xsrfHeaderName) config.xsrfHeaderName = defaultConfig.xsrfHeaderName;
         if (defaultConfig.httpAgent) config.httpAgent = defaultConfig.httpAgent;
         if (defaultConfig.httpsAgent) config.httpsAgent = defaultConfig.httpsAgent;
+
+        config.transformRequest = defaultConfig.transformRequest ?
+            [transformRequest, ...defaultConfig.transformRequest] :
+            [transformRequest];
+
+        config.transformResponse = defaultConfig.transformResponse ?
+            [transformResponse, ...defaultConfig.transformResponse] :
+            [transformResponse];
 
         super(config);
     }
