@@ -1,18 +1,17 @@
 import sinon from 'sinon';
-import GigwalkAPI from '../../src/index';
-import GigwalkAxios from '../../src/client';
-import Authorization from '../../src/api/authorization';
-import Certifications from '../../src/api/certifications';
-import Customers from '../../src/api/customers';
-import LocationLists from '../../src/api/locationLists';
-import Locations from '../../src/api/locations';
-import Organizations from '../../src/api/organizations';
-import Search from '../../src/api/search';
-import Subscriptions from '../../src/api/subscriptions';
-import TargetLists from '../../src/api/targetLists';
-import Targets from '../../src/api/targets';
-import TicketEvents from '../../src/api/ticketEvents';
-import Tickets from '../../src/api/tickets';
+import GigwalkAPI from '../api';
+import GigwalkAxios from '../client';
+import Authorization from '../api/authorization';
+import Certifications from '../api/certifications';
+import Customers from '../api/customers';
+import LocationLists from '../api/locationLists';
+import Locations from '../api/locations';
+import Organizations from '../api/organizations';
+import Search from '../api/search';
+import Subscriptions from '../api/subscriptions';
+import TargetLists from '../api/targetLists';
+import Targets from '../api/targets';
+import Tickets from '../api/tickets';
 
 describe('GigwalkAPI', () => {
     const sandbox = sinon.sandbox.create();
@@ -81,9 +80,6 @@ describe('GigwalkAPI', () => {
 
         expect(gigwalk.targets).to.be.instanceof(Targets);
         expect(gigwalk.targets.client).to.equal(gigwalk.client);
-
-        expect(gigwalk.ticketEvents).to.be.instanceof(TicketEvents);
-        expect(gigwalk.ticketEvents.client).to.equal(gigwalk.client);
 
         expect(gigwalk.tickets).to.be.instanceof(Tickets);
         expect(gigwalk.tickets.client).to.equal(gigwalk.client);

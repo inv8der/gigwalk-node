@@ -1,8 +1,8 @@
 import { Axios } from 'axios';
 import sinon from 'sinon';
 import mockery from 'mockery';
-import GigwalkAxios from '../../src/client';
-import RequestQueue from '../../src/requestQueue';
+import GigwalkAxios from '../client';
+import RequestQueue from '../requestQueue';
 
 describe('GigwalkAxios', () => {
     const sandbox = sinon.sandbox.create();
