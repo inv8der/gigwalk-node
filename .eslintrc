@@ -7,7 +7,10 @@
         "browser": true,
         "es6": true
     },
-    "globals": {},
+    "globals": {
+        "gigwalk": true,
+        "expect": true
+    },
     "plugins": [
         "mocha",
         "flowtype",

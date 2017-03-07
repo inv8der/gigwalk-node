@@ -1,7 +1,7 @@
 import sinon from 'sinon';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import RequestQueue from '../../src/requestQueue';
+import RequestQueue from '../requestQueue';
 
 describe('RequestQueue', () => {
     const sandbox = sinon.sandbox.create();
