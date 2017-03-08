@@ -1,7 +1,7 @@
 // @flow
 import cloneDeep from 'lodash.clonedeep';
 import GigwalkAxios from './client';
-// import Authorization from './api/authorization';
+import Authorization from './api/authorization';
 // import Calendar from './api/calendar';
 // import Certifications from './api/certifications';
 // import Customers from './api/customers';
@@ -74,7 +74,7 @@ export default class GigwalkAPI {
         // See https://github.com/mzabriskie/axios/issues/391
         client.defaults = cloneDeep(client.defaults);
 
-        // this.authorization = new Authorization(client);
+        this.authorization = new Authorization(client);
         // this.calendar = new Calendar(client);
         // this.certifications = new Certifications(client);
         // this.customers = new Customers(client);
