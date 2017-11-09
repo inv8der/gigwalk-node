@@ -1,0 +1,128 @@
+{
+    "resources": {
+        "organizations": {
+            "resources": {
+                "customers": {
+                    "methods": {
+                        "list": {
+                            "id": "gigwalk.organizations.customers.list",
+                            "path": "/v1/organizations/{organization_id}/customers",
+                            "httpMethod": "GET",
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "location": "path",
+                                    "required": true
+                                },
+                                "limit": {
+                                    "type": "number",
+                                    "location": "query"
+                                },
+                                "offset": {
+                                    "type": "number",
+                                    "location": "query"
+                                },
+                                "sort_field": {
+                                    "type": "string",
+                                    "enum": [
+                                        "title",
+                                        "description",
+                                        "date_created",
+                                        "date_updated",
+                                        "org_id",
+                                        "type",
+                                        "user_count",
+                                        "self_cert"
+                                    ],
+                                    "location": "query"
+                                },
+                                "sort_order": {
+                                    "type": "number",
+                                    "enum": [
+                                        "asc",
+                                        "desc"
+                                    ],
+                                    "location": "query"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": {
+                "update": {
+                    "id": "gigwalk.organizations.update",
+                    "path": "/v1/organizations/{organization_id}",
+                    "httpMethod": "PUT",
+                    "request": {
+                        "$ref": "#/schemas/UpdateOrganizationRequest"
+                    },
+                    "parameters": {
+                        "organization_id": {
+                            "type": "number",
+                            "location": "path",
+                            "required": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "schemas": {
+        "UpdateOrganizationRequest": {
+            "properties": {
+                "core_customer_account": {
+                    "title": "core_customer_account",
+                    "type": "string"
+                },
+                "core_private_workforce": {
+                    "title": "core_private_workforce",
+                    "type": "boolean"
+                },
+                "email": {
+                    "title": "email",
+                    "type": "string"
+                },
+                "first_name": {
+                    "title": "first_name",
+                    "type": "string"
+                },
+                "last_name": {
+                    "title": "last_name",
+                    "type": "string"
+                },
+                "needs_core": {
+                    "title": "needs_core",
+                    "type": "boolean"
+                },
+                "organization_name": {
+                    "title": "organization_name",
+                    "type": "string"
+                },
+                "status": {
+                    "enum": [
+                        "ACTIVE",
+                        "ARCHIVED",
+                        "DELETED",
+                        "INACTIVE"
+                    ],
+                    "title": "status",
+                    "type": "string"
+                },
+                "vertical_type": {
+                    "enum": [
+                        "CONSULTING",
+                        "CPG",
+                        "MARKET_RESEARCH",
+                        "RETAIL_MERCHANDISING",
+                        "STAFFING"
+                    ],
+                    "title": "vertical_type",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "type": "object"
+        }
+    }
+}

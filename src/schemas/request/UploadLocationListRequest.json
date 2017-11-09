@@ -1,0 +1,19 @@
+{
+    "properties": {
+        "keys": {
+            "title": "keys",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "location_list_name": {
+            "title": "location_list_name",
+            "type": "string"
+        }
+    },
+    "required": [
+        "location_list_name"
+    ],
+    "type": "object"
+}

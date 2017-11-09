@@ -1,0 +1,21 @@
+{
+    "properties": {
+        "address": {
+            "title": "address",
+            "type": "string"
+        },
+        "title": {
+            "title": "title",
+            "type": "string"
+        },
+        "status": {
+            "title": "status",
+            "type": "string",
+            "enum": [
+                "ACTIVE",
+                "INACTIVE"
+            ]
+        }
+    },
+    "type": "object"
+}

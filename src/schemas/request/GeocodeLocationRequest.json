@@ -1,0 +1,25 @@
+{
+    "properties": {
+        "address": {
+            "title": "address",
+            "type": "string"
+        },
+        "override_existing": {
+            "title": "override_existing",
+            "type": "boolean"
+        },
+        "organization_data": {
+            "title": "organization_data",
+            "type": "object"
+        },
+        "title": {
+            "title": "title",
+            "type": "string"
+        }
+    },
+    "required": [
+        "address",
+        "title"
+    ],
+    "type": "object"
+}

@@ -1,0 +1,33 @@
+{
+    "properties": {
+        "description": {
+            "title": "description",
+            "type": "string"
+        },
+        "state": {
+            "enum": [
+                "ACTIVE",
+                "DELETED"
+            ],
+            "title": "state",
+            "type": "string"
+        },
+        "title": {
+            "title": "title",
+            "type": "string"
+        },
+        "type": {
+            "enum": [
+                "ASSIGNED_CERT",
+                "SELF_CERT",
+                "VALIDATED_CERT"
+            ],
+            "title": "type",
+            "type": "string"
+        }
+    },
+    "required": [
+        "title"
+    ],
+    "type": "object"
+}

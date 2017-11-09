@@ -1,0 +1,84 @@
+{
+    "required": [
+        "id",
+        "organization_id"
+    ],
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "title": {
+            "type": "string"
+        },
+        "address": {
+            "type": "string"
+        },
+        "specificity": {
+            "type": "string"
+        },
+        "locality": {
+            "type": "string"
+        },
+        "administrative_area_level_2": {
+            "type": "string"
+        },
+        "administrative_area_level_1": {
+            "type": "string"
+        },
+        "country": {
+            "type": "string"
+        },
+        "postal_code": {
+            "type": "string"
+        },
+        "latitude": {
+            "type": "number"
+        },
+        "longitude": {
+            "type": "number"
+        },
+        "date_created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "date_updated": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "formatted_address": {
+            "type": "string"
+        },
+        "state": {
+            "enum": [
+                "DUPLICATE",
+                "NEW",
+                "NOT_FOUND",
+                "PARTIAL_MATCH",
+                "RESOLVED",
+                "UNVERIFIED"
+            ],
+            "type": "string",
+            "maxLength": 13
+        },
+        "status": {
+            "enum": [
+                "ACTIVE",
+                "INACTIVE"
+            ],
+            "type": "string",
+            "maxLength": 8
+        },
+        "source_location_id": {
+            "type": "integer"
+        },
+        "organization_id": {
+            "type": "integer"
+        },
+        "tzid": {
+            "type": "string",
+            "maxLength": 40
+        }
+    },
+    "title": "Location"
+}

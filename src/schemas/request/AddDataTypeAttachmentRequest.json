@@ -1,0 +1,28 @@
+{
+    "properties": {
+        "file_name": {
+            "title": "file_name",
+            "type": "string"
+        },
+        "file_type": {
+            "enum": [
+                "image/gif",
+                "image/jpeg",
+                "image/png",
+                "text/csv",
+                "application/pdf"
+            ],
+            "title": "file_type",
+            "type": "string"
+        },
+        "url": {
+            "title": "url",
+            "type": "string"
+        }
+    },
+    "required": [
+        "file_type",
+        "url"
+    ],
+    "type": "object"
+}

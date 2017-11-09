@@ -1,0 +1,21 @@
+{
+    "properties": {
+        "name": {
+            "title": "name",
+            "type": "string"
+        },
+        "parent_id": {
+            "format": "integer",
+            "title": "parent_id",
+            "type": "number"
+        },
+        "organization_data": {
+            "title": "organization_data",
+            "type": "object"
+        }
+    },
+    "required": [
+        "name"
+    ],
+    "type": "object"
+}

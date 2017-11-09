@@ -1,0 +1,73 @@
+{
+    "required": [
+        "id"
+    ],
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "description": {
+            "type": "string"
+        },
+        "questions": {
+            "type": "string"
+        },
+        "value_type": {
+            "type": "string"
+        },
+        "importance": {
+            "type": "integer"
+        },
+        "organization_id": {
+            "type": "integer"
+        },
+        "is_shared": {
+            "type": "boolean"
+        },
+        "is_required": {
+            "type": "boolean"
+        },
+        "time_estimate": {
+            "type": "integer"
+        },
+        "status": {
+            "enum": [
+                "ACTIVE",
+                "INACTIVE"
+            ],
+            "type": "string",
+            "maxLength": 8
+        },
+        "observation_target_type_id": {
+            "type": "integer"
+        },
+        "expected_value_expression": {
+            "type": "string"
+        },
+        "parent_id": {
+            "type": "integer"
+        },
+        "date_created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "date_updated": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "attachments": {
+            "type": "string"
+        },
+        "dashboard_visible": {
+            "type": "boolean"
+        },
+        "project_or_global_type": {
+            "type": "string"
+        },
+        "category": {
+            "type": "string"
+        }
+    },
+    "title": "DataType"
+}

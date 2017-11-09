@@ -1,0 +1,19 @@
+{
+    "properties": {
+        "observation_target_type_id": {
+            "format": "integer",
+            "title": "observation_target_type_id",
+            "type": "number"
+        },
+        "organization_data": {
+            "title": "organization_data",
+            "type": "object"
+        },
+        "title": {
+            "title": "title",
+            "type": "string"
+        }
+    },
+    "required": [],
+    "type": "object"
+}

@@ -1,0 +1,15 @@
+{
+    "properties": {
+        "parent_id": {
+            "format": "integer",
+            "title": "parent_id",
+            "type": "number"
+        },
+        "suffix": {
+            "title": "suffix",
+            "type": "string"
+        }
+    },
+    "required": [],
+    "type": "object"
+}

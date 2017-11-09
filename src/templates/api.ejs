@@ -1,0 +1,35 @@
+import urlTemplate from 'url-template';
+import cloneDeep from 'lodash.clonedeep'
+import GigwalkAxios from './client';
+import validate from './utils/validate';
+import stringifyQuery from './utils/stringifyQuery';
+
+export default class Gigwalk {
+    constructor(config = {}) {
+        const host = typeof config.host === 'string' ? config.host : 'api.app.gigwalk.com';
+        const protocol = typeof config.protocol === 'string' ? config.protocol : 'https';
+
+        this._client = new GigwalkAxios({ baseURL: `${protocol}://${host}` });
+        this._headers = {};
+
+        // AxiosIssue - global.defaults and client.defaults reference the same object. Changing the instance
+        // defaults will affect the global namespace (and therefore any other axios instances)
+        // See https://github.com/mzabriskie/axios/issues/391
+        this._client.defaults = cloneDeep(this._client.defaults);
+
+        <%_ Object.entries(resources).forEach(([key, value]) => { _%>
+        this.<%= key %> = <%- include('api-resource', Object.assign({}, value, { name: key })); %>;
+        <%_ }) _%>
+    }
+
+    authenticate(auth) {
+        let header = '';
+        if (typeof auth.username === 'string' && typeof auth.password === 'string') {
+            header = `Basic ${btoa(`${auth.username}:${auth.password}`)}`;
+        } else if (typeof auth.token === 'string') {
+            header = `Token ${auth.token}`;
+        }
+
+        this._headers.Authorization = header;
+    }
+}

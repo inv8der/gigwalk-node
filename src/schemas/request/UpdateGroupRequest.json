@@ -1,0 +1,26 @@
+{
+    "properties": {
+        "name": {
+            "title": "name",
+            "type": "string"
+        },
+        "organization_data": {
+            "title": "organization_data",
+            "type": "array"
+        },
+        "organization_id": {
+            "format": "integer",
+            "title": "organization_id",
+            "type": "number"
+        },
+        "parent_id": {
+            "format": "integer",
+            "title": "parent_id",
+            "type": "number"
+        }
+    },
+    "required": [
+        "name"
+    ],
+    "type": "object"
+}

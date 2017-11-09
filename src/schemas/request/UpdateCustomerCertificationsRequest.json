@@ -1,0 +1,24 @@
+{
+    "properties": {
+        "action": {
+            "enum": [
+                "add",
+                "remove"
+            ],
+            "title": "action",
+            "type": "string"
+        },
+        "certification_ids": {
+            "title": "certification_ids",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        }
+    },
+    "required": [
+        "action",
+        "certification_ids"
+    ],
+    "type": "object"
+}

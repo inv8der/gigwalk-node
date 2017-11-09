@@ -1,0 +1,914 @@
+{
+    "name": "gigwalk",
+    "version": "v3.11",
+    "title": "Gigwalk API",
+    "description": "",
+    "resources": {
+        "authorization": {
+            "methods": {
+                "get": {
+                    "id": "gigwalk.authorization.get",
+                    "path": "/v1/auth",
+                    "httpMethod": "GET",
+                    "description": "",
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/schemas/Customer"
+                        }
+                    },
+                    "parameters": {}
+                },
+                "forgotPassword": {
+                    "id": "gigwalk.authorization.forgotPassword",
+                    "path": "/v1/forgot_password",
+                    "httpMethod": "POST",
+                    "description": "",
+                    "response": {},
+                    "request": {
+                        "$ref": "#/schemas/ForgotPasswordRequest"
+                    },
+                    "parameters": {}
+                },
+                "resetPassword": {
+                    "id": "gigwalk.authorization.resetPassword",
+                    "path": "/v1/reset_password",
+                    "httpMethod": "POST",
+                    "description": "",
+                    "response": {},
+                    "request": {
+                        "$ref": "#/schemas/ResetPasswordRequest"
+                    },
+                    "parameters": {}
+                }
+            }
+        },
+        "organizations": {
+            "resources": {
+                "certifications": {
+                    "methods": {
+                        "list": {
+                            "id": "gigwalk.organzations.certifications.list",
+                            "path": "/v1/organizations/{organization_id}/certifications",
+                            "httpMethod": "POST",
+                            "description": "",
+                            "response": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/schemas/Certification"
+                                }
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                },
+                                "limit": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "query"
+                                },
+                                "offset": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "query"
+                                },
+                                "sort_field": {
+                                    "type": "string",
+                                    "description": "",
+                                    "enum": [
+                                        "title",
+                                        "description",
+                                        "date_created",
+                                        "date_updated",
+                                        "org_id",
+                                        "type",
+                                        "user_count",
+                                        "self_cert"
+                                    ],
+                                    "location": "query"
+                                },
+                                "sort_order": {
+                                    "type": "number",
+                                    "description": "",
+                                    "enum": [
+                                        "asc",
+                                        "desc"
+                                    ],
+                                    "location": "query"
+                                },
+                                "q": {
+                                    "type": "string",
+                                    "description": "",
+                                    "location": "query"
+                                },
+                                "filter_type": {
+                                    "type": "string",
+                                    "description": "",
+                                    "enum": [
+                                        "ASSIGNED_CERT",
+                                        "SELF_CERT",
+                                        "VALIDATED_CERT"
+                                    ],
+                                    "location": "query"
+                                }
+                            }
+                        },
+                        "bulkCreate": {
+                            "id": "gigwalk.organizations.certifications.bulkCreate",
+                            "path": "/v1/organizations/{organization_id}/certifications",
+                            "httpMethod": "POST",
+                            "description": "",
+                            "response": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/schemas/Certification"
+                                }
+                            },
+                            "request": {
+                                "$ref": "#/schemas/BulkCreateCertificationsRequest"
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "bulkUpdate": {
+                            "id": "gigwalk.organizations.certifications.bulkUpdate",
+                            "path": "/v1/organizations/{organization_id}/certifications",
+                            "httpMethod": "PUT",
+                            "description": "",
+                            "response": {},
+                            "request": {
+                                "$ref": "#/schemas/BulkUpdateCertificationsRequest"
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "bulkDelete": {
+                            "id": "gigwalk.organizations.certifications.delete",
+                            "path": "/v1/organizations/{organization_id}/certifications/delete",
+                            "httpMethod": "POST",
+                            "description": "",
+                            "response": {
+                                "type": "array",
+                                "items": {
+                                    "type": "number",
+                                    "format": "integer"
+                                }
+                            },
+                            "request": {
+                                "$ref": "#/schemas/BulkDeleteCertificationsRequest"
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "upload": {
+                            "id": "gigwalk.organizations.certifications.upload",
+                            "path": "/v1/organizations/{organization_id}/certifications/upload",
+                            "httpMethod": "POST",
+                            "description": "",
+                            "response": {
+                                "type": "array",
+                                "items": {
+                                    "type": "number",
+                                    "format": "integer"
+                                }
+                            },
+                            "request": {
+                                "$ref": "#/schemas/UploadCertificationsRequest"
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "dataTypes": {
+                    "methods": {
+                        "searchFilters": {
+                            "id": "gigwalk.organizations.dataTypes.searchFilters",
+                            "path": "/v2/organizations/{organization_id}/search/data_types/filters",
+                            "httpMethod": "POST",
+                            "description": "",
+                            "request": {
+                                "$ref": "#/schemas/SearchOrganizationDataTypeFiltersRequest"
+                            },
+                            "response": {
+
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "search": {
+                            "id": "gigwalk.organizations.dataTypes.search",
+                            "path": "/v2/organizations/{organization_id}/search/data_types",
+                            "httpMethod": "POST",
+                            "description": "",
+                            "request": {
+                                "$ref": "#/schemas/SearchOrganizationDataTypesRequest"
+                            },
+                            "response": {
+                                "type": "object",
+                                "properties": {
+                                    "search_results": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "data": {
+                                                    "$ref": "#/schemas/DataType"
+                                                },
+                                                "score": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "total_records": {
+                                        "type": "number",
+                                        "format": "integer"
+                                    }
+                                }
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "groups": {
+                    "methods": {
+                        "create": {
+                            "id": "gigwalk.organizations.groups.create",
+                            "path": "/v1/organizations/{organization_id}/groups",
+                            "httpMethod": "POST",
+                            "description": "",
+                            "response": {
+                                "$ref": "#/schemas/Group"
+                            },
+                            "request": {
+                                "$ref": "#/schemas/CreateGroupRequest"
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "list": {
+                            "id": "gigwalk.organizations.groups.list",
+                            "path": "/v1/organizations/{organization_id}/groups",
+                            "httpMethod": "GET",
+                            "description": "",
+                            "response": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/schemas/Group"
+                                }
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                },
+                                "limit": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "query"
+                                },
+                                "offset": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "query"
+                                },
+                                "sort_field": {
+                                    "type": "string",
+                                    "description": "",
+                                    "enum": [
+                                        "id",
+                                        "name",
+                                        "parent_id",
+                                        "date_created",
+                                        "date_updated",
+                                        "type"
+                                    ],
+                                    "location": "query"
+                                },
+                                "sort_order": {
+                                    "type": "number",
+                                    "description": "",
+                                    "enum": [
+                                        "asc",
+                                        "desc"
+                                    ],
+                                    "location": "query"
+                                }
+                            }
+                        }
+                    }
+                },
+                "locations": {
+                    "methods": {
+                        "list": {
+                            "id": "gigwalk.organizations.locations.list",
+                            "path": "/v1/organizations/{organization_id}/locations",
+                            "httpMethod": "GET",
+                            "description": "",
+                            "response": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/schemas/Location"
+                                }
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                },
+                                "limit": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "query"
+                                },
+                                "offset": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "query"
+                                }
+                            }
+                        },
+                        "bulkCreate": {
+                            "id": "gigwalk.organizations.locations.create",
+                            "path": "/v1/organizations/{organization_id}/locations",
+                            "httpMethod": "POST",
+                            "description": "",
+                            "request": {
+                                "$ref": "#/schemas/BulkCreateLocationsRequest"
+                            },
+                            "response": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/schemas/Location"
+                                }
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "bulkUpdate": {
+                            "id": "gigwalk.organizations.locations.update",
+                            "path": "/v1/organizations/{organization_id}/locations",
+                            "httpMethod": "PUT",
+                            "description": "",
+                            "request": {
+                                "$ref": "#/schemas/BulkUpdateLocationsRequest"
+                            },
+                            "response": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/schemas/Location"
+                                }
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "delete": {
+                            "id": "gigwalk.organizations.locations.delete",
+                            "path": "/v1/organizations/{organization_id}/locations/{location_id}",
+                            "httpMethod": "DELETE",
+                            "description": "",
+                            "response": {},
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                },
+                                "location_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "geocode": {
+                            "id": "gigwalk.organizations.locations.geocode",
+                            "path": "/v1/organizations/{organization_id}/locations/geocode",
+                            "httpMethod": "POST",
+                            "description": "",
+                            "request": {
+                                "$ref": "#/schemas/GeocodeLocationRequest"
+                            },
+                            "response": {
+                                "$ref": "#/schemas/Location"
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "update": {
+                            "id": "gigwalk.organizations.locations.update",
+                            "path": "/v1/organizations/{organization_id}/locations/geocode/{location_id}",
+                            "httpMethod": "PUT",
+                            "description": "",
+                            "request": {
+                                "$ref": "#/schemas/UpdateLocationRequest"
+                            },
+                            "response": {
+                                "$ref": "#/schemas/Location"
+                            },
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                },
+                                "location_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "locationLists": {
+                    "methods": {
+                        "list": {
+                            "id": "gigwalk.organizations.locationLists.list",
+                            "path": "/v1/organizations/{organization_id}/location_lists",
+                            "httpMethod": "GET",
+                            "description": "",
+                            "response": {},
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                },
+                                "limit": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "query"
+                                },
+                                "offset": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "query"
+                                },
+                                "sort_field": {
+                                    "type": "string",
+                                    "description": "",
+                                    "enum": [
+                                        "id",
+                                        "name",
+                                        "status"
+                                    ],
+                                    "location": "query"
+                                },
+                                "sort_order": {
+                                    "type": "number",
+                                    "description": "",
+                                    "enum": [
+                                        "asc",
+                                        "desc"
+                                    ],
+                                    "location": "query"
+                                },
+                                "include_auto_generated": {
+                                    "type": "boolean",
+                                    "description": "",
+                                    "location": "query"
+                                }
+                            }
+                        },
+                        "create": {
+                            "id": "gigwalk.organizations.locationLists.create",
+                            "path": "/v1/organizations/{organization_id}/location_lists",
+                            "httpMethod": "POST",
+                            "description": "",
+                            "request": {
+                                "$ref": "#/schemas/CreateLocationListRequest"
+                            },
+                            "response": {},
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "bulkDelete": {
+                            "id": "gigwalk.organizations.locationLists.bulkDelete",
+                            "path": "/v1/organizations/{organization_id}/location_lists",
+                            "httpMethod": "DELETE",
+                            "description": "",
+                            "response": {},
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "upload": {
+                            "id": "gigwalk.organizations.locationLists.upload",
+                            "path": "/v1/organizations/{organization_id}/location_lists/upload",
+                            "httpMethod": "POST",
+                            "description": "",
+                            "request": {
+                                "$ref": "#/schemas/UploadLocationListRequest"
+                            },
+                            "response": {},
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "subscriptions": {
+                    "methods": {
+                        "list": {
+                            "id": "gigwalk.organizations.subscriptions.list",
+                            "path": "/v1/organizations/{organization_id}/subscriptions",
+                            "httpMethod": "GET",
+                            "description": "",
+                            "response": {},
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                },
+                                "limit": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "query"
+                                },
+                                "offset": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "query"
+                                },
+                                "sort_field": {
+                                    "type": "string",
+                                    "description": "",
+                                    "enum": [
+                                        "title",
+                                        "description",
+                                        "state",
+                                        "due_date",
+                                        "created_customer",
+                                        "due_date",
+                                        "execution",
+                                        "locations"
+                                    ],
+                                    "location": "query"
+                                },
+                                "sort_order": {
+                                    "type": "number",
+                                    "description": "",
+                                    "enum": [
+                                        "asc",
+                                        "desc"
+                                    ],
+                                    "location": "query"
+                                },
+                                "dashboard_visible": {
+                                    "title": "dashboard_visible",
+                                    "type": "boolean",
+                                    "location": "query"
+                                },
+                                "state": {
+                                    "title": "state",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "DRAFT",
+                                            "ACTIVE",
+                                            "ARCHIVED",
+                                            "CANCELED",
+                                            "OFFLINE",
+                                            "DELETED"
+                                        ]
+                                    },
+                                    "location": "query"
+                                }
+                            }
+                        },
+                        "create": {
+                            "id": "gigwalk.organizations.subscriptions.bulkCreate",
+                            "path": "/v1/organizations/{organization_id}/subscriptions",
+                            "httpMethod": "POST",
+                            "description": "",
+                            "request": {
+                                "$ref": "#/schemas/CreateSubscriptionRequest"
+                            },
+                            "response": {},
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        },
+                        "bulkCreate": {
+                            "id": "gigwalk.organizations.subscriptions.bulkCreate",
+                            "path": "/v1/organizations/{organization_id}/subscriptions",
+                            "httpMethod": "POST",
+                            "description": "",
+                            "request": {
+                                "$ref": "#/schemas/BulkCreateSubscriptionsRequest"
+                            },
+                            "response": {},
+                            "parameters": {
+                                "organization_id": {
+                                    "type": "number",
+                                    "description": "",
+                                    "location": "path",
+                                    "required": true
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "methods": {
+                "delete": {
+                    "id": "gigwalk.organizations.delete",
+                    "path": "/v1/organizations/{organization_id}",
+                    "httpMethod": "DELETE",
+                    "description": "",
+                    "response": {},
+                    "parameters": {
+                        "organization_id": {
+                            "type": "number",
+                            "description": "",
+                            "location": "path",
+                            "required": true
+                        }
+                    }
+                },
+                "get": {
+                    "id": "gigwalk.organizations.get",
+                    "path": "/v1/organizations/{organization_id}",
+                    "httpMethod": "GET",
+                    "description": "",
+                    "response": {},
+                    "parameters": {
+                        "organization_id": {
+                            "type": "number",
+                            "description": "",
+                            "location": "path",
+                            "required": true
+                        }
+                    }
+                },
+                "update": {
+                    "id": "gigwalk.organizations.update",
+                    "path": "/v1/organizations/{organization_id}",
+                    "httpMethod": "PUT",
+                    "description": "",
+                    "response": {},
+                    "parameters": {
+                        "organization_id": {
+                            "type": "number",
+                            "description": "",
+                            "location": "path",
+                            "required": true
+                        }
+                    }
+                },
+                "list": {
+                    "id": "gigwalk.organizations.list",
+                    "path": "/v1/organizations",
+                    "httpMethod": "GET",
+                    "description": "",
+                    "response": {},
+                    "parameters": {}
+                },
+                "create": {
+                    "id": "gigwalk.organizations.create",
+                    "path": "/v1/organizations",
+                    "httpMethod": "POST",
+                    "description": "",
+                    "response": {},
+                    "parameters": {}
+                },
+                "search": {
+                    "id": "gigwalk.organizations.search",
+                    "path": "/v1/organizations/search",
+                    "httpMethod": "GET",
+                    "description": "",
+                    "response": {},
+                    "parameters": {}
+                },
+                "getCloud9Urls": {
+                    "id": "gigwalk.organizations.getCloud9Urls",
+                    "path": "/v1/organizations/{organization_id}/cloud9",
+                    "httpMethod": "GET",
+                    "description": "",
+                    "response": {},
+                    "parameters": {
+                        "organization_id": {
+                            "type": "number",
+                            "description": "",
+                            "location": "path",
+                            "required": true
+                        }
+                    }
+                },
+                "getBalance": {
+                    "id": "gigwalk.organizations.getBalance",
+                    "path": "/v1/organizations/{organization_id}/payments",
+                    "httpMethod": "GET",
+                    "description": "",
+                    "response": {},
+                    "parameters": {
+                        "organization_id": {
+                            "type": "number",
+                            "description": "",
+                            "location": "path",
+                            "required": true
+                        }
+                    }
+                },
+                "addFunds": {
+                    "id": "gigwalk.organizations.addFunds",
+                    "path": "/v1/organizations/{organization_id}/payments",
+                    "httpMethod": "POST",
+                    "description": "",
+                    "response": {},
+                    "parameters": {
+                        "organization_id": {
+                            "type": "number",
+                            "description": "",
+                            "location": "path",
+                            "required": true
+                        }
+                    }
+                },
+                "searchSubscriptionFilters": {
+                    "id": "gigwalk.organizations.subscriptions.searchFilters",
+                    "path": "/v2/organizations/{organizationId}/search/subscriptions/filters",
+                    "httpMethod": "POST",
+                    "description": "",
+                    "response": {},
+                    "parameters": {}
+                },
+                "searchSubscriptions": {
+                    "id": "gigwalk.organizations.subscriptions.search",
+                    "path": "/v2/organizations/{organization_id}/search/subscriptions",
+                    "httpMethod": "POST",
+                    "description": "",
+                    "response": {},
+                    "parameters": {}
+                }
+            }
+        }
+    },
+    "schemas": {
+        "ForgotPasswordRequest": {
+            "$ref": "request/ForgotPasswordRequest.json"
+        },
+        "ResetPasswordRequest": {
+            "$ref": "request/ResetPasswordRequest.json"
+        },
+        "BulkCreateCertificationsRequest": {
+            "$ref": "request/BulkCreateCertificationsRequest.json"
+        },
+        "BulkUpdateCertificationsRequest": {
+            "$ref": "request/BulkUpdateCertificationsRequest.json"
+        },
+        "BulkDeleteCertificationsRequest": {
+            "$ref": "request/BulkDeleteCertificationsRequest.json"
+        },
+        "UploadCertificationsRequest": {
+            "$ref": "request/UploadCertificationsRequest.json"
+        },
+        "SearchOrganizationDataTypeFiltersRequest": {
+            "$ref": "request/SearchOrganizationDataTypeFiltersRequest.json"
+        },
+        "SearchOrganizationDataTypesRequest": {
+            "$ref": "request/SearchOrganizationDataTypesRequest.json"
+        },
+        "BulkCreateLocationsRequest": {
+            "$ref": "request/BulkCreateLocationsRequest.json"
+        },
+        "BulkUpdateLocationsRequest": {
+            "$ref": "request/BulkUpdateLocationsRequest.json"
+        },
+        "GeocodeLocationRequest": {
+            "$ref": "request/GeocodeLocationRequest.json"
+        },
+        "UpdateLocationRequest": {
+            "$ref": "request/UpdateLocationRequest.json"
+        },
+        "CreateLocationListRequest": {
+            "$ref": "request/CreateLocationListRequest.json"
+        },
+        "CreateSubscriptionRequest": {
+            "$ref": "request/CreateSubscriptionRequest.json"
+        },
+        "BulkCreateSubscriptionsRequest": {
+            "$ref": "request/BulkCreateSubscriptionsRequest.json"
+        },
+        "UploadLocationListRequest": {
+            "$ref": "request/UploadLocationListRequest.json"
+        },
+        "CreateGroupRequest": {
+            "$ref": "request/CreateGroupRequest.json"
+        },
+        "Customer": {
+            "$ref": "response/Customer.json"
+        },
+        "Certification": {
+            "$ref": "response/Certification.json"
+        },
+        "DataType": {
+            "$ref": "response/DataType.json"
+        },
+        "Group": {
+            "$ref": "response/Group.json"
+        },
+        "Location": {
+            "$ref": "response/Location.json"
+        }
+    }
+}

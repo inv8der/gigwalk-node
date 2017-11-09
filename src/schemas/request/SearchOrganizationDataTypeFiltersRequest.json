@@ -1,0 +1,17 @@
+{
+    "properties": {
+        "query_string": {
+            "title": "query_string",
+            "type": "string"
+        },
+        "search_field": {
+            "title": "search_field",
+            "type": "string"
+        }
+    },
+    "required": [
+        "query_string",
+        "search_field"
+    ],
+    "type": "object"
+}

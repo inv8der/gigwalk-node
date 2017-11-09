@@ -1,0 +1,86 @@
+{
+    "properties": {
+        "bounding_box": {
+            "items": {
+                "type": "number"
+            },
+            "title": "bounding_box",
+            "type": "array"
+        },
+        "dashboard_visible": {
+            "title": "dashboard_visible",
+            "type": "boolean"
+        },
+        "include_anywhere": {
+            "title": "include_anywhere",
+            "type": "boolean"
+        },
+        "map_lat": {
+            "format": "float",
+            "title": "map_lat",
+            "type": "number"
+        },
+        "map_lon": {
+            "format": "float",
+            "title": "map_lon",
+            "type": "number"
+        },
+        "order": {
+            "properties": {
+                "direction": {
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "title": "direction",
+                    "type": "string"
+                },
+                "field": {
+                    "title": "field",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "direction",
+                "field"
+            ],
+            "type": "object"
+        },
+        "query": {
+            "type": "array",
+            "items": {
+                "properties": {
+                    "field": {
+                        "title": "field",
+                        "type": "string"
+                    },
+                    "operator": {
+                        "title": "operator",
+                        "type": "string"
+                    },
+                    "value": {
+                        "title": "value",
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "field",
+                    "operator",
+                    "value"
+                ],
+                "type": "object"
+            }
+        },
+        "radius": {
+            "format": "integer",
+            "title": "radius",
+            "type": "number"
+        },
+        "timezone": {
+            "title": "timezone",
+            "type": "string"
+        }
+    },
+    "required": [],
+    "type": "object"
+}

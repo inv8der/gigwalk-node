@@ -1,0 +1,37 @@
+{
+    "required": [
+        "id",
+        "organization_id"
+    ],
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "_s3_key": {
+            "type": "string"
+        },
+        "date_created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "date_updated": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "status": {
+            "enum": [
+                "FAILED",
+                "IN_PROCESS",
+                "NEW",
+                "PROCESSED"
+            ],
+            "type": "string",
+            "maxLength": 10
+        },
+        "organization_id": {
+            "type": "integer"
+        }
+    },
+    "title": "FileJob"
+}

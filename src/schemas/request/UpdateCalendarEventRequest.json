@@ -1,0 +1,38 @@
+{
+    "properties": {
+        "description": {
+            "title": "description",
+            "type": "string"
+        },
+        "end": {
+            "format": "date-time",
+            "title": "end",
+            "type": "string"
+        },
+        "event_type": {
+            "enum": [
+                "BLOCK",
+                "TICKET_SCHEDULE"
+            ],
+            "title": "event_type",
+            "type": "string"
+        },
+        "start": {
+            "format": "date-time",
+            "title": "start",
+            "type": "string"
+        },
+        "summary": {
+            "title": "summary",
+            "type": "string"
+        },
+        "time_zone": {
+            "title": "time_zone",
+            "type": "string"
+        }
+    },
+    "required": [
+        "time_zone"
+    ],
+    "type": "object"
+}

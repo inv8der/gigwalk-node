@@ -1,0 +1,19 @@
+{
+<%_
+    // Since variables in the top-level data object are available to all includes, we need to
+    // provide defaults that we can pass down as local variables. This will override the
+    // top-level variables. Otherwise, self-referential includes will result in max call stack
+    // exceptions
+    const defaults = {
+        resources: undefined,
+        methods: undefined
+    };
+_%>
+<%_ Object.entries(typeof methods !== 'undefined' ? methods : {}).forEach(([key, value]) => { _%>
+    <%= key %>: <%- include('api-method', Object.assign({}, defaults, value, { name: key })); %>,
+<%_ }) _%>
+
+<%_ Object.entries(typeof resources !== 'undefined' ? resources : {}).forEach(([key, value]) => { _%>
+    <%= key %>: <%- include('api-resource', Object.assign({}, defaults, value, { name: key })); %>,
+<%_ }) _%>
+}

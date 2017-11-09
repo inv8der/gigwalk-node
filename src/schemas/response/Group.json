@@ -1,0 +1,32 @@
+{
+    "required": [
+        "id"
+    ],
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        },
+        "organization_id": {
+            "type": "integer"
+        },
+        "parent_id": {
+            "type": "integer"
+        },
+        "date_created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "date_updated": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "type": {
+            "type": "string"
+        }
+    },
+    "title": "Group"
+}

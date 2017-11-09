@@ -1,0 +1,41 @@
+{
+    "properties": {
+        "name": {
+            "title": "name",
+            "type": "string"
+        },
+        "observation_target_type": {
+            "format": "integer",
+            "title": "observation_target_type",
+            "type": "number"
+        },
+        "observation_targets": {
+            "title": "observation_targets",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "status": {
+            "enum": [
+                "ACTIVE",
+                "ARCHIVED",
+                "DELETED",
+                "INACTIVE"
+            ],
+            "title": "status",
+            "type": "string"
+        }
+    },
+    "required": [
+        "name",
+        "observation_target_type",
+        "observation_targets"
+    ],
+    "type": "object"
+}

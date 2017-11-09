@@ -1,0 +1,106 @@
+{
+    "properties": {
+        "address_line_1": {
+            "title": "address_line_1",
+            "type": "string"
+        },
+        "address_line_2": {
+            "title": "address_line_2",
+            "type": "string"
+        },
+        "first_name": {
+            "title": "first_name",
+            "type": "string"
+        },
+        "ideal_hours_week": {
+            "format": "integer",
+            "title": "ideal_hours_week",
+            "type": "number"
+        },
+        "last_name": {
+            "title": "last_name",
+            "type": "string"
+        },
+        "max_hours_week": {
+            "format": "integer",
+            "title": "max_hours_week",
+            "type": "number"
+        },
+        "password": {
+            "title": "password",
+            "type": "string"
+        },
+        "paypal_email": {
+            "title": "paypal_email",
+            "type": "string"
+        },
+        "phonenumber": {
+            "type": "string"
+        },
+        "photo_url": {
+            "title": "photo_url",
+            "type": "string"
+        }
+    },
+    "required": [],
+    "type": "object"
+}
+
+{
+    "type": "object",
+    "properties": {
+        "email": {
+            "type": "string",
+            "description": ""
+        },
+        "first_name": {
+            "type": "string",
+            "description": ""
+        },
+        "last_name": {
+            "type": "string",
+            "description": ""
+        },
+        "photo_url": {
+            "type": "string",
+            "description": ""
+        },
+        "address_line_1": {
+            "type": "string",
+            "description": ""
+        },
+        "address_line_2": {
+            "type": "string",
+            "description": ""
+        },
+        "phonenumber": {
+            "type": "string",
+            "description": "",
+        },
+        "customer_status": {
+            "$ref": "CustomerStatus"
+        },
+        "max_hours_week": {
+            "type": "number",
+            "description": ""
+        },
+        "ideal_hours_week": {
+            "type": "number",
+            "description": ""
+        },
+        "home_latitude": {
+            "type": "number",
+            "description": ""
+        },
+        "home_longitude": {
+            "type": "number",
+            "description": ""
+        },
+        "certifications": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "required": [
+        "id"
+    ],
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "organization_id": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        },
+        "observation_target_type_id": {
+            "type": "integer"
+        },
+        "date_created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "date_updated": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "status": {
+            "enum": [
+                "ACTIVE",
+                "ARCHIVED",
+                "DELETED",
+                "INACTIVE"
+            ],
+            "type": "string",
+            "maxLength": 8
+        },
+        "auto_generated": {
+            "type": "boolean"
+        }
+    },
+    "title": "OrganizationObservationTargetList"
+}

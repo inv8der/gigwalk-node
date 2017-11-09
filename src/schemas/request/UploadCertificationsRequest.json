@@ -1,0 +1,13 @@
+{
+    "properties": {
+        "s3_keys": {
+            "title": "s3_keys",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [],
+    "type": "object"
+}

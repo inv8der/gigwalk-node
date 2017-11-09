@@ -1,0 +1,115 @@
+{
+    "required": [
+        "id"
+    ],
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "email": {
+            "type": "string",
+            "maxLength": 120
+        },
+        "first_name": {
+            "type": "string",
+            "maxLength": 120
+        },
+        "last_name": {
+            "type": "string",
+            "maxLength": 120
+        },
+        "photo_url": {
+            "type": "string"
+        },
+        "address_line_1": {
+            "type": "string",
+            "maxLength": 200
+        },
+        "address_line_2": {
+            "type": "string",
+            "maxLength": 200
+        },
+        "city": {
+            "type": "string",
+            "maxLength": 100
+        },
+        "state": {
+            "type": "string",
+            "maxLength": 100
+        },
+        "postal_code": {
+            "type": "string",
+            "maxLength": 50
+        },
+        "phonenumber": {
+            "type": "string",
+            "maxLength": 20
+        },
+        "organization_id": {
+            "type": "integer"
+        },
+        "role": {
+            "enum": [
+                "ADMIN",
+                "ANALYST",
+                "OPERATOR",
+                "PLATFORM_ADMIN",
+                "SELF_SERVICE",
+                "SUPER_ADMIN",
+                "WORKER"
+            ],
+            "type": "string",
+            "maxLength": 14
+        },
+        "customer_status": {
+            "enum": [
+                "ACTIVE",
+                "DELETED",
+                "INACTIVE",
+                "PENDING",
+                "SUSPENDED"
+            ],
+            "type": "string",
+            "maxLength": 9
+        },
+        "work_latitude": {
+            "type": "number"
+        },
+        "work_longitude": {
+            "type": "number"
+        },
+        "home_latitude": {
+            "type": "number"
+        },
+        "home_longitude": {
+            "type": "number"
+        },
+        "tzid": {
+            "type": "string",
+            "maxLength": 40
+        },
+        "max_hours_week": {
+            "type": "integer"
+        },
+        "ideal_hours_week": {
+            "type": "integer"
+        },
+        "date_created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "date_updated": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "date_last_auth": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "rating_score": {
+            "type": "number"
+        }
+    },
+    "title": "DataType"
+}

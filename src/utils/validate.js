@@ -1,6 +1,6 @@
 // @flow
 import Ajv from 'ajv';
-import { diff } from 'deep-diff';
+import deep from 'deep-diff';
 
 const ajv = new Ajv({
     allErrors: true,
@@ -12,7 +12,7 @@ export default function validate(json: Object, schema: Object) {
     const validator = ajv.compile(schema);
     const isValid = validator(json);
 
-    const differences = diff(orig, json) || [];
+    const differences = deep.diff(orig, json) || [];
     const warnings = differences.reduce((msgs, record) => {
         if (record.kind === 'D') {
             msgs.push(`Unknown property: data.${record.path.join('.')}`);

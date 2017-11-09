@@ -1,0 +1,40 @@
+{
+    "properties": {
+        "locations": {
+            "title": "locations",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "title": "address",
+                        "type": "string"
+                    },
+                    "title": {
+                        "title": "title",
+                        "type": "string"
+                    },
+                }
+            }
+        },
+        "name": {
+            "title": "name",
+            "type": "string"
+        },
+        "status": {
+            "enum": [
+                "ACTIVE",
+                "ARCHIVED",
+                "DELETED",
+                "INACTIVE"
+            ],
+            "title": "status",
+            "type": "string"
+        }
+    },
+    "required": [
+        "locations",
+        "name"
+    ],
+    "type": "object"
+}

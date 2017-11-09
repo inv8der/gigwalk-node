@@ -1,0 +1,16 @@
+{
+    "properties": {
+        "certification_ids": {
+            "title": "certification_ids",
+            "type": "array",
+            "items": {
+                "type": "number",
+                "format": "integer"
+            }
+        }
+    },
+    "required": [
+        "certification_ids"
+    ],
+    "type": "object"
+}

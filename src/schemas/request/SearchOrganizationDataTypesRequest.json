@@ -1,0 +1,44 @@
+{
+    "properties": {
+        "filters": {
+            "properties": {
+                "filter_key": {
+                    "title": "filter_key",
+                    "type": "string"
+                },
+                "filter_value": {
+                    "title": "filter_value",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "filter_key",
+                "filter_value"
+            ],
+            "type": "object"
+        },
+        "query_string": {
+            "title": "query_string",
+            "type": "string"
+        },
+        "sort": {
+            "properties": {
+                "sort_key": {
+                    "title": "sort_key",
+                    "type": "string"
+                },
+                "sort_order": {
+                    "title": "sort_order",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "sort_key",
+                "sort_order"
+            ],
+            "type": "object"
+        }
+    },
+    "required": [],
+    "type": "object"
+}

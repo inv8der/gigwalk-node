@@ -1,0 +1,34 @@
+{
+    "properties": {
+        "command": {
+            "title": "command",
+            "type": "string"
+        },
+        "event_type": {
+            "title": "event_type",
+            "type": "string"
+        },
+        "group_ids": {
+            "items": {
+                "type": "number"
+            },
+            "title": "group_ids",
+            "type": "array"
+        },
+        "message": {
+            "title": "message",
+            "type": "string"
+        },
+        "users": {
+            "items": {
+                "type": "number"
+            },
+            "title": "users",
+            "type": "array"
+        }
+    },
+    "required": [
+        "message"
+    ],
+    "type": "object"
+}

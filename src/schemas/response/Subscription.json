@@ -1,0 +1,177 @@
+{
+    "required": [
+        "id",
+        "organization_id"
+    ],
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "organization_id": {
+            "type": "integer"
+        },
+        "start_date": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "end_date": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "frequency_type": {
+            "type": "string"
+        },
+        "frequency_amount": {
+            "type": "string"
+        },
+        "frequency_byweekday": {
+            "type": "string"
+        },
+        "frequency_window": {
+            "type": "integer"
+        },
+        "schedule_type": {
+            "enum": [
+                "ASAP",
+                "RANGE",
+                "RECURRING_ASAP",
+                "RECURRING_RANGE"
+            ],
+            "type": "string",
+            "maxLength": 15
+        },
+        "enabled_flag": {
+            "type": "boolean"
+        },
+        "needs_approval": {
+            "type": "boolean"
+        },
+        "organization_observation_target_lists": {
+            "type": "string"
+        },
+        "date_created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "date_updated": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "description": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "state": {
+            "enum": [
+                "ACTIVE",
+                "ARCHIVED",
+                "CANCELED",
+                "DELETED",
+                "DRAFT",
+                "OFFLINE"
+            ],
+            "type": "string",
+            "maxLength": 8
+        },
+        "created_customer_id": {
+            "type": "integer"
+        },
+        "needs_core": {
+            "type": "boolean"
+        },
+        "needs_public_workforce": {
+            "type": "boolean"
+        },
+        "date_consumed": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "consumed_state": {
+            "enum": [
+                "CONSUMED",
+                "NEW",
+                "QUEUED"
+            ],
+            "type": "string",
+            "maxLength": 8
+        },
+        "ticket_time_estimate": {
+            "type": "integer"
+        },
+        "tickets_target": {
+            "type": "integer"
+        },
+        "tickets_overage": {
+            "type": "integer"
+        },
+        "min_gig_price": {
+            "type": "number"
+        },
+        "can_reschedule": {
+            "type": "boolean"
+        },
+        "worker_count": {
+            "type": "integer"
+        },
+        "dashboard_visible": {
+            "type": "boolean"
+        },
+        "location_override": {
+            "type": "boolean"
+        },
+        "recurrence": {
+            "type": "string"
+        },
+        "optin_type": {
+            "enum": [
+                "DOUBLE_OPTIN",
+                "NO_OPTIN",
+                "SIMPLE_OPTIN",
+                "SYSTEM_APPROVED_OPTIN"
+            ],
+            "type": "string",
+            "maxLength": 21
+        },
+        "two_way_rating_enabled": {
+            "type": "boolean"
+        },
+        "rating_email": {
+            "type": "string",
+            "maxLength": 120
+        },
+        "version_id": {
+            "type": "integer"
+        },
+        "edit_in_progress": {
+            "type": "boolean"
+        },
+        "autoassign": {
+            "type": "boolean"
+        },
+        "bundle_autoassign": {
+            "type": "boolean"
+        },
+        "is_multi_day": {
+            "type": "boolean"
+        },
+        "multi_day_template_id": {
+            "type": "integer"
+        },
+        "archive_s3_key": {
+            "type": "string"
+        },
+        "use_project_data_types": {
+            "type": "boolean"
+        },
+        "near_ticket_distance": {
+            "type": "number"
+        },
+        "all_customers": {
+            "type": "boolean"
+        }
+    },
+    "title": "OrganizationSubscription"
+}

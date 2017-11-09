@@ -1,0 +1,51 @@
+{
+    "required": [
+        "id"
+    ],
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "title": {
+            "type": "string",
+            "maxLength": 120
+        },
+        "description": {
+            "type": "string",
+            "maxLength": 512
+        },
+        "private": {
+            "type": "boolean"
+        },
+        "organization_id": {
+            "type": "integer"
+        },
+        "date_created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "date_updated": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "type": {
+            "enum": [
+                "ASSIGNED_CERT",
+                "SELF_CERT",
+                "VALIDATED_CERT"
+            ],
+            "type": "string",
+            "maxLength": 14
+        },
+        "state": {
+            "enum": [
+                "ACTIVE",
+                "DELETED"
+            ],
+            "type": "string",
+            "maxLength": 7
+        }
+    },
+    "title": "Certification"
+}

@@ -1,0 +1,232 @@
+{
+    "properties": {
+        "projects": {
+            "title": "projects",
+            "type": "array",
+            "items": {
+                "properties": {
+                    "all_customers": {
+                        "title": "all_customers",
+                        "type": "boolean"
+                    },
+                    "autoassign": {
+                        "title": "autoassign",
+                        "type": "boolean"
+                    },
+                    "bundle_autoassign": {
+                        "title": "bundle_autoassign",
+                        "type": "boolean"
+                    },
+                    "can_reschedule": {
+                        "title": "can_reschedule",
+                        "type": "boolean"
+                    },
+                    "certifications": {
+                        "title": "certifications",
+                        "type": "array"
+                    },
+                    "created_customer_id": {
+                        "format": "integer",
+                        "title": "created_customer_id",
+                        "type": "number"
+                    },
+                    "customers": {
+                        "title": "customers",
+                        "type": "array"
+                    },
+                    "dashboard_visible": {
+                        "title": "dashboard_visible",
+                        "type": "boolean"
+                    },
+                    "description": {
+                        "title": "description",
+                        "type": "string"
+                    },
+                    "enabled_flag": {
+                        "title": "enabled_flag",
+                        "type": "boolean"
+                    },
+                    "end_date": {
+                        "format": "date-time",
+                        "title": "end_date",
+                        "type": "string"
+                    },
+                    "frequency_amount": {
+                        "title": "frequency_amount",
+                        "type": "string"
+                    },
+                    "frequency_byweekday": {
+                        "title": "frequency_byweekday",
+                        "type": "string"
+                    },
+                    "frequency_type": {
+                        "enum": [
+                            "DAYS",
+                            "WEEKS",
+                            "MONTHS",
+                            "YEARS"
+                        ],
+                        "title": "frequency_type",
+                        "type": "string"
+                    },
+                    "frequency_window": {
+                        "format": "integer",
+                        "title": "frequency_window",
+                        "type": "number"
+                    },
+                    "groups": {
+                        "title": "groups",
+                        "type": "array"
+                    },
+                    "is_multi_day": {
+                        "title": "is_multi_day",
+                        "type": "boolean"
+                    },
+                    "location_lists": {
+                        "title": "location_lists",
+                        "type": "array"
+                    },
+                    "location_override": {
+                        "title": "location_override",
+                        "type": "boolean"
+                    },
+                    "locations": {
+                        "title": "locations",
+                        "type": "array"
+                    },
+                    "min_gig_price": {
+                        "format": "float",
+                        "title": "min_gig_price",
+                        "type": "number"
+                    },
+                    "multi_day_template_id": {
+                        "format": "integer",
+                        "title": "multi_day_template_id",
+                        "type": "number"
+                    },
+                    "near_ticket_distance": {
+                        "format": "float",
+                        "title": "near_ticket_distance",
+                        "type": "number"
+                    },
+                    "needs_approval": {
+                        "title": "needs_approval",
+                        "type": "boolean"
+                    },
+                    "needs_core": {
+                        "title": "needs_core",
+                        "type": "boolean"
+                    },
+                    "needs_public_workforce": {
+                        "title": "needs_public_workforce",
+                        "type": "boolean"
+                    },
+                    "optin_type": {
+                        "enum": [
+                            "DOUBLE_OPTIN",
+                            "NO_OPTIN",
+                            "SIMPLE_OPTIN",
+                            "SYSTEM_APPROVED_OPTIN"
+                        ],
+                        "title": "optin_type",
+                        "type": "string"
+                    },
+                    "organization_data": {
+                        "title": "organization_data",
+                        "type": "object"
+                    },
+                    "organization_location_lists": {
+                        "title": "organization_location_lists",
+                        "type": "array"
+                    },
+                    "organization_observation_target_lists": {
+                        "title": "organization_observation_target_lists",
+                        "type": "string"
+                    },
+                    "organization_observation_targets": {
+                        "title": "organization_observation_targets",
+                        "type": "string"
+                    },
+                    "rating_email": {
+                        "title": "rating_email",
+                        "type": "string"
+                    },
+                    "recurrence": {
+                        "title": "recurrence",
+                        "type": "string"
+                    },
+                    "schedule_type": {
+                        "enum": [
+                            "ASAP",
+                            "RANGE",
+                            "RECURRING_ASAP",
+                            "RECURRING_RANGE"
+                        ],
+                        "title": "schedule_type",
+                        "type": "string"
+                    },
+                    "start_date": {
+                        "format": "date-time",
+                        "title": "start_date",
+                        "type": "string"
+                    },
+                    "state": {
+                        "enum": [
+                            "ACTIVE",
+                            "ARCHIVED",
+                            "CANCELED",
+                            "DELETED",
+                            "DRAFT",
+                            "OFFLINE"
+                        ],
+                        "title": "state",
+                        "type": "string"
+                    },
+                    "ticket_time_estimate": {
+                        "format": "integer",
+                        "title": "ticket_time_estimate",
+                        "type": "number"
+                    },
+                    "tickets_overage": {
+                        "format": "integer",
+                        "title": "tickets_overage",
+                        "type": "number"
+                    },
+                    "tickets_target": {
+                        "format": "integer",
+                        "title": "tickets_target",
+                        "type": "number"
+                    },
+                    "title": {
+                        "title": "title",
+                        "type": "string"
+                    },
+                    "two_way_rating_enabled": {
+                        "title": "two_way_rating_enabled",
+                        "type": "boolean"
+                    },
+                    "use_project_data_types": {
+                        "title": "use_project_data_types",
+                        "type": "boolean"
+                    },
+                    "worker_count": {
+                        "exclusiveMinimum": true,
+                        "format": "integer",
+                        "minimum": 1,
+                        "title": "worker_count",
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "description",
+                    "title"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    "required": [
+        "projects"
+    ],
+    "type": "object"
+}

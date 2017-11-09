@@ -1,0 +1,52 @@
+(params = {}) => {
+    const { data, ...urlParams } = params;
+    <%_
+        const requiredParams = [];
+        const pathParams = [];
+
+        Object.entries(parameters).forEach(([name, config]) => {
+            const { required, location } = config;
+            if (required) requiredParams.push(name);
+            if (location === 'path') pathParams.push(name);
+        });
+    _%>
+    const requestSchema = <%- JSON.stringify(typeof request !== 'undefined' ? request : {}, null, 4) %>;
+    const urlSchema =
+        <%_ if (typeof parameters === 'undefined') { %> {}
+        <%_ } else { %> {
+        type: 'object',
+        properties: {
+            <%_ Object.entries(parameters).forEach(([name, config], i, arr) => { -%>
+            <%= name %>: <%- JSON.stringify(config, ['type', 'enum'], 4) %><% if (i < arr.length - 1) { %>,<% } %>
+            <%_ }); _%>
+        },
+        required: <%- JSON.stringify(requiredParams, null, 4) %>
+        <%_ } _%>
+    };
+
+    const errors = [];
+    const warnings = [];
+    const validateArgs = [[urlParams, urlSchema], [data || {}, requestSchema]];
+    validateArgs.forEach(([json, schema]) => {
+        const result = validate(json, schema);
+        errors.push(...result.errors);
+        warnings.push(...result.warnings);
+    });
+
+    warnings.forEach((msg) => { console.warn(msg); }); // eslint-disable-line no-console
+    if (errors.length > 0) {
+        return Promise.reject(new Error(errors.join('\n')));
+    }
+
+    const { <%= pathParams.concat(['...queryParams']).join(', ') %> } = urlParams;
+    const pathParams = { <%= pathParams.join(', ') %> };
+    const template = urlTemplate.parse('<%= path %>');
+    const url = `${template.expand(pathParams)}${stringifyQuery(queryParams)}`;
+
+    return this._client.request({
+        url,
+        method: '<%= httpMethod.toLowerCase() %>',
+        headers: this._headers,
+        data,
+    });
+}

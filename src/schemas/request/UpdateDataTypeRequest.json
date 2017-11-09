@@ -1,0 +1,90 @@
+{
+    "properties": {
+        "category": {
+            "title": "category",
+            "type": "string"
+        },
+        "dashboard_visible": {
+            "title": "dashboard_visible",
+            "type": "boolean"
+        },
+        "description": {
+            "title": "description",
+            "type": "string"
+        },
+        "expected_value_expression": {
+            "title": "expected_value_expression",
+            "type": "object"
+        },
+        "importance": {
+            "format": "integer",
+            "title": "importance",
+            "type": "number"
+        },
+        "is_required": {
+            "title": "is_required",
+            "type": "boolean"
+        },
+        "observation_target_type_id": {
+            "format": "integer",
+            "title": "observation_target_type_id",
+            "type": "number"
+        },
+        "organization_id": {
+            "format": "integer",
+            "title": "organization_id",
+            "type": "number"
+        },
+        "parent_id": {
+            "format": "integer",
+            "title": "parent_id",
+            "type": "number"
+        },
+        "questions": {
+            "title": "questions",
+            "type": "object"
+        },
+        "status": {
+            "enum": [
+                "ACTIVE",
+                "INACTIVE"
+            ],
+            "title": "status",
+            "type": "string"
+        },
+        "time_estimate": {
+            "format": "integer",
+            "title": "time_estimate",
+            "type": "number"
+        },
+        "value_type": {
+            "enum": [
+                "BARCODE",
+                "CHECK",
+                "CHECKBOXES",
+                "CURRENCY",
+                "DATE",
+                "DATE_TIME",
+                "EMAIL_ADDRESS",
+                "FREE_TEXT",
+                "HINT",
+                "INT",
+                "ITEM_GRID",
+                "MULTIPLE_CHOICE",
+                "MULTI_SELECT",
+                "NUMBER",
+                "PHONE_NUMBER",
+                "PHOTO",
+                "SIGNATURE",
+                "TASK",
+                "TIME",
+                "UPC",
+                "ZIP_CODE"
+            ],
+            "title": "value_type",
+            "type": "string"
+        }
+    },
+    "required": [],
+    "type": "object"
+}

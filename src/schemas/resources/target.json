@@ -1,0 +1,63 @@
+{
+    "required": [
+        "id",
+        "organization_id"
+    ],
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "title": {
+            "type": "string"
+        },
+        "attributes": {
+            "type": "string"
+        },
+        "observation_target_type_id": {
+            "type": "integer"
+        },
+        "status": {
+            "enum": [
+                "ACTIVE",
+                "INACTIVE"
+            ],
+            "type": "string",
+            "maxLength": 8
+        },
+        "organization_id": {
+            "type": "integer"
+        },
+        "date_created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "date_updated": {
+            "type": "string",
+            "format": "date-time"
+        }
+    },
+    "title": "ObservationTarget"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JSON Pretty Print - Privacy Policy
