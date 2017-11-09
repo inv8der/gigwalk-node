@@ -1,5 +1,8 @@
 {
-    "extends": "airbnb",
+    "extends": [
+        "airbnb",
+        "plugin:flowtype/recommended"
+    ],
     "parser": "babel-eslint",
     "env": {
         "node": true,
@@ -19,32 +22,31 @@
     "rules": {
         "arrow-parens": [1, "always"],
         "class-methods-use-this": 0,
-        "comma-dangle": 0,
+        "comma-dangle": ["error", {
+            "arrays": "always-multiline",
+            "objects": "always-multiline",
+            "imports": "always-multiline",
+            "exports": "always-multiline",
+            "functions": "ignore"
+        }],
         "consistent-return": 1,
-        "flowtype/define-flow-type": 2,
-        "flowtype/require-parameter-type": [2, {"excludeArrowFunctions": "expressionsOnly"}],
-        "flowtype/require-return-type": [2, "sometimes", {"annotateUndefined": "never",  "excludeArrowFunctions": "expressionsOnly"}],
-        "flowtype/require-valid-file-annotation": [2, "always"],
-        "flowtype/space-after-type-colon": [2, "always"],
-        "flowtype/space-before-type-colon": [2, "never"],
-        "flowtype/use-flow-type": 2,
-        "flowtype/valid-syntax": 2,
         "func-names": 2,
         "gigwalk/require-valid-flow-file-annotation": [2, "(spec|test)"],
         "guard-for-in": 1,
-        "import/extensions": ["error", "never", {"css": "always", "scss": "always", "json": "always"}],
-        "import/imports-first": 1,
+        "import/extensions": ["error", "never", { "css": "always", "scss": "always", "json": "always" }],
+        "import/first": 1,
         "import/newline-after-import": 1,
         "import/no-amd": 2,
         "import/no-commonjs": 2,
         "import/no-extraneous-dependencies": 0,
         "import/no-named-as-default": 1,
         "import/no-named-as-default-member": 1,
+        "import/no-webpack-loader-syntax": "warn",
         "import/prefer-default-export": 1,
-        "indent": [2, 4, {"SwitchCase": 1}],
+        "indent": ["error", 4, { "SwitchCase": 1, "ignoredNodes": ["JSXAttribute", "JSXSpreadAttribute"] }],
         "jsx-a11y/no-static-element-interactions": 1,
         "jsx-a11y/tabindex-no-positive": 1,
-        "max-len": ["error", 160, 4, {"ignoreComments": false, "ignoreTemplateLiterals": false}],
+        "max-len": ["error", 160, 4, { "ignoreComments": false, "ignoreTemplateLiterals": false }],
         "mocha/no-exclusive-tests": 2,
         "new-cap": 2,
         "no-console": 2,
@@ -64,10 +66,12 @@
         "prefer-spread": 1,
         "react/jsx-filename-extension": 0,
         "react/jsx-indent": [2, 4],
-        "react/jsx-no-bind": 1,
+        "react/no-array-index-key": "warn",
+        "react/no-find-dom-node": "warn",
         "react/no-string-refs": 1,
         "react/no-unused-prop-types": 0,
-        "require-jsdoc": 1,
+        "react/require-default-props": "warn",
+        "require-jsdoc": 0,
         "space-before-function-paren": [2, "never"],
         "spaced-comment": 2
     },
@@ -77,4 +81,3 @@
         }
     }
 }
-

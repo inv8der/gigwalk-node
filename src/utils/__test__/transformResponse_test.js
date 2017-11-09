@@ -7,13 +7,13 @@ describe('transformResponse', () => {
             snake_case: 'sucks',
             nested: {
                 object_id: 2,
-            }
+            },
         });
         expect(transformResponse(data)).to.deep.equal({
             snakeCase: 'sucks',
             nested: {
                 objectId: 2,
-            }
+            },
         });
     });
 

@@ -21,11 +21,11 @@ describe('RequestQueue', () => {
         const clock = sandbox.useFakeTimers();
         const firstRequest = {
             url: '/v1/tickets',
-            method: 'get'
+            method: 'get',
         };
         const secondRequest = {
             url: '/v1/certifications/12',
-            method: 'delete'
+            method: 'delete',
         };
 
         const users = [{ id: 1, email: 'marc@gigwalk.com' }];
@@ -46,7 +46,7 @@ describe('RequestQueue', () => {
 
         return Promise.all([
             expect(firstPromise).to.eventually.contain.all.keys({ status: 200, data: users }),
-            expect(secondPromise).to.be.rejected
+            expect(secondPromise).to.be.rejected,
         ]);
     });
 
@@ -58,16 +58,16 @@ describe('RequestQueue', () => {
             method: 'put',
             data: {
                 title: 'FBI',
-                description: 'Female Body Inspector'
-            }
+                description: 'Female Body Inspector',
+            },
         };
         const duplicateRequest = {
             method: 'put',
             data: {
                 description: 'Female Body Inspector',
-                title: 'FBI'
+                title: 'FBI',
             },
-            url: '/v1/certifications'
+            url: '/v1/certifications',
         };
 
         const firstPromise = requestQueue.add(request);

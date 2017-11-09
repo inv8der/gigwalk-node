@@ -14,7 +14,6 @@ interface ActiveRequestRecord<T> {
 }
 
 export default class RequestQueue {
-
     // Queue of requests awaiting dispatch
     dispatchQueue: Array<Request<*>> = [];
 
@@ -37,7 +36,7 @@ export default class RequestQueue {
         const request: Request<*> = {
             url: config.url,
             success: () => {},
-            error: () => {}
+            error: () => {},
         };
 
         // Note: To pass type checking, manual assignment of maybe types is required. See https://github.com/facebook/flow/issues/2167

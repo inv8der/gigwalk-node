@@ -7,13 +7,13 @@ describe('transformRequest', () => {
             camelCase: 'rules',
             nested: {
                 objectId: 2,
-            }
+            },
         };
         expect(transformRequest(params)).to.deep.equal({
             camel_case: 'rules',
             nested: {
                 object_id: 2,
-            }
+            },
         });
     });
 

@@ -6,7 +6,6 @@ import transformRequest from './utils/transformRequest';
 import transformResponse from './utils/transformResponse';
 
 export default class GigwalkAxios extends Axios {
-
     defaults: {
         headers: {
             common: {
