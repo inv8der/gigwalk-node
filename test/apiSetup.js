@@ -1,8 +1,9 @@
+// @noflow
 import GigwalkAPI from '../src';
 
 const configVars = [
     'GIGWALK_API_SERVER_HOSTNAME',
-    'GIGWALK_PLATFORM_ADMIN_TOKEN'
+    'GIGWALK_PLATFORM_ADMIN_TOKEN',
     // 'GIGWALK_SUPER_ADMIN_TOKEN',
     // 'GIGWALK_ADMIN_TOKEN',
     // 'GIGWALK_WORKER_TOKEN',
@@ -18,11 +19,11 @@ configVars.forEach((key: string) => {
 });
 
 const gigwalk = new GigwalkAPI({
-    hostname: process.env.GIGWALK_API_SERVER_HOSTNAME
+    hostname: process.env.GIGWALK_API_SERVER_HOSTNAME,
 });
 
 gigwalk.authenticate({
-    token: process.env.GIGWALK_PLATFORM_ADMIN_TOKEN
+    token: process.env.GIGWALK_PLATFORM_ADMIN_TOKEN,
 });
 
 global.gigwalk = gigwalk;
