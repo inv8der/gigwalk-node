@@ -1,6 +1,6 @@
 {
   "name": "gigwalk",
-  "version": "0.0.0-semantic-release",
+  "version": "0.0.0-development",
   "description": "Gigwalk API Client - universal.",
   "main": "./lib",
   "scripts": {
@@ -90,7 +90,7 @@
     "mocha": "^4.0.1",
     "mockery": "^2.1.0",
     "moniker": "^0.1.2",
-    "semantic-release": "^6.3.2",
+    "semantic-release": "^8.2.0",
     "sinon": "^4.1.2",
     "sinon-chai": "^2.14.0",
     "through2": "^2.0.3"
