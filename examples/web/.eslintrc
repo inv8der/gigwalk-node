@@ -1,8 +1,0 @@
-{
-    "extends": "../../.eslintrc",
-    "rules": {
-        "import/no-commonjs": 0,
-        "gigwalk/require-valid-flow-file-annotation": 0,
-        "import/no-unresolved": 0
-    }
-}
